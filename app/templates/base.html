@@ -1,0 +1,13 @@
+<!doctype html>
+
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+<link rel="shortcut icon" href="{{ url_for('static', filename='blog-solid.svg') }}" type="image/x-icon">
+
+<header>
+  {% block header %}{% endblock %}
+</header>
+
+<section>
+  {% block content %}{% endblock %}
+</section>
