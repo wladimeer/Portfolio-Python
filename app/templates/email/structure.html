@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ data['language'] }}">
+  <head>
+    <style>
+      body {
+        margin: 0px;
+      }
+    
+      .title {
+        color: #ffffff;
+        background: linear-gradient(100deg, #606060, transparent) #373737;
+        padding: 2px 0px;
+      }
+    
+      .title h1 {
+        font-size: 25px;
+        font-family: 'Farsan', cursive;
+        text-align: center;
+      }
+    
+      .banner {
+        width: 100%;
+        text-align: center;
+      }
+    
+      p {
+        margin: 0px;
+      }
+    
+      .content {
+        width: 100%;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+    
+      .content:last-child {
+        margin-top: 50px;
+        margin-bottom: 0px;
+      }
+    
+      .content p {
+        padding-bottom: 32px;
+        font-family: 'Farsan', cursive;
+        font-size: 18px;
+      }
+    
+      .content-image {
+        margin: 5px 0px;
+      }
+    
+      .content a {
+        width: 100px;
+        color: #ffffff;
+        display: inline-block;
+        background-color: #555555;
+        font-family: 'Farsan', cursive;
+        text-decoration: none;
+        border-radius: 5px;
+        padding: 5px 12px;
+        font-size: 18px;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Portfolio</h1>
+      </div>
+
+      <div class="banner">
+        <img
+          src="https://raw.githubusercontent.com/wladimeer/Portfolio-Python/032475a4a874a47dcd4e3b258d2512f6b6d8f6db/app/static/sent.png"
+          width="600px" alt="Sent"
+        />
+      </div>
+
+      <div class="content">
+        <p>{{ data['message_email'][0] }}</p>
+        <a href="{{ data['link_email']['project'] }}">{{ data['view']['project'] }}</a>
+      </div>
+
+      <div class="banner">
+        <img
+          src="https://raw.githubusercontent.com/wladimeer/Portfolio-Python/032475a4a874a47dcd4e3b258d2512f6b6d8f6db/app/static/github.png"
+          alt="GitHub" width="300px" style="border-radius: 100%;"
+        />
+      </div>
+
+      <div class="content">
+        <p>{{ data['message_email'][1] }}</p>
+        <a href="{{ data['link_email']['repository'] }}">{{ data['view']['repository'] }}</a>
+      </div>
+    </div>
+  </body>
+</html>

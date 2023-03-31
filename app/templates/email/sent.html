@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Portfolio
+{% endblock %}
+
+{% block content %}
+  <div class="sent">
+    <div class="left">
+      <h1>{{ data['message_title'] }}</h1>
+      <p>{{ data['message'] }}</p>
+    </div>
+
+    <div class="right">
+      <img class="hero-image" src="{{ url_for('static', filename='email.png') }}" width="600px" />
+    </div>
+  </div>
+{% endblock %}

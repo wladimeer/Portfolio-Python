@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Portfolio
+{% endblock %}
+
+{% block content %}
+  <div class="project-list">
+    {% for project in data['projects'] %}
+      <a class="project-content" href="{{ url_for('portfolio.detail', id=project.id) }}">
+        <p>{{ project.title }}</p>
+
+        <div class="project-image">
+          <img src="{{ project.image }}" alt="Project Image" />
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

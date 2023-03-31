@@ -1,6 +1,55 @@
 {% extends 'base.html' %}
 
-{% block title %}Portfolio{% endblock %}
+{% block title %}
+  Portfolio
+{% endblock %}
 
 {% block content %}
+  <div class="hero">
+    <div class="left">
+      <h1>Sebastián Benavides - {{ data['profile'] }}</h1>
+      <P>{{ data['description'] }}</P>
+
+      <div>
+        <a href="#contact">{{ data['jump']['contact_me'] }}</a>
+      </div>
+    </div>
+
+    <div class="right">
+      <img class="hero-image" src="{{ url_for('static', filename='network.png') }}" width="600px" />
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="left">
+      <img class="hero-image" src="{{ url_for('static', filename='coding.png') }}" width="600px" />
+    </div>
+
+    <div class="right">
+      <h1>{{ data['title'] }}</h1>
+      <P>{{ data['experience'] }}</P>
+    </div>
+  </div>
+
+  <div class="project" id="apps">
+    <P>{{ data['spoiler'] }}</P>
+
+    <div class="project-image">
+      <img src="{{ url_for('static', filename='projects.png') }}" width="600px" />
+    </div>
+
+    <a href="{{ url_for('portfolio.project') }}">{{ data['view']['project'] }}</a>
+  </div>
+
+  <div class="contact" id="contact">
+    <P>{{ data['jump']['contact'] }}</P>
+
+    {% include 'portfolio/form.html' %}
+  </div>
+
+  <div class="footer">
+    <P>{{ data['jump']['contact_me'] }}</P>
+
+    {% include 'portfolio/footer.html' %}
+  </div>
 {% endblock %}

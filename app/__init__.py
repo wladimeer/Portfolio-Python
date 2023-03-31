@@ -1,6 +1,8 @@
 from flask import Flask
 from .database import init_app
+from .email import email_blueprint
 from .portfolio import portfolio_blueprint
+from .anomaly import not_found
 import os
 
 def create_app():
@@ -16,7 +18,9 @@ def create_app():
     TO_EMAIL=os.environ.get('TO_EMAIL')
   )
 
+  app.register_blueprint(email_blueprint)
   app.register_blueprint(portfolio_blueprint)
+  app.register_error_handler(404, not_found)
 
   init_app(app)
 
