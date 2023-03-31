@@ -1,13 +1,47 @@
 <!doctype html>
 
-<title>{% block title %}{% endblock %}</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-<link rel="shortcut icon" href="{{ url_for('static', filename='blog-solid.svg') }}" type="image/x-icon">
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='blog-solid.svg') }}" type="image/x-icon">
 
-<header>
-  {% block header %}{% endblock %}
-</header>
+  <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-<section>
-  {% block content %}{% endblock %}
-</section>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Farsan&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <a href="{{ data['main_url'] }}">SEBASTIAN BENAVIDES</a>
+  
+    <div class="header-content">
+      <nav>
+        <ul>
+          <li><a href="#apps">{{ data['jump']['apps'] }}</a></li>
+          <li><a href="#contact">{{ data['jump']['contact'] }}</a></li>
+        </ul>
+      </nav>
+  
+      <form action="{{ url_for('portfolio.index') }}" method="post">
+        <button type="submit" class="language-button">
+          <i class="fa-solid fa-language" style="color: #000000; height: 20px;"></i>
+          <input name="rule" value="{{ data['rule'] }}" hidden />
+        </button>
+      </form>
+    </div>
+  </header>
+  
+  <section>
+    {% block content %}{% endblock %}
+  </section>
+
+  <footer>
+    {% block footer %}{% endblock %}
+  </footer>
+</body>
