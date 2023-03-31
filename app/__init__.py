@@ -15,7 +15,7 @@ def create_app():
     DATABASE_PASSWORD=os.environ.get('DATABASE_PASSWORD'),
     SENDGRID_API_KEY=os.environ.get('SENDGRID_API_KEY'),
     DATABASE_HOST=os.environ.get('DATABASE_HOST'),
-    TO_EMAIL=os.environ.get('TO_EMAIL')
+    MY_EMAIL=os.environ.get('MY_EMAIL')
   )
 
   app.register_blueprint(email_blueprint)
