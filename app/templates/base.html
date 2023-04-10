@@ -7,9 +7,15 @@
 
   <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,13 +24,13 @@
 
 <body>
   <header>
-    <a href="{{ data['main_url'] }}">SEBASTIAN BENAVIDES</a>
+    <a href="{{ data['main_url'] }}">Portfolio</a>
   
     <div class="header-content">
       <nav>
         <ul>
-          <li><a href="#apps">{{ data['jump']['apps'] }}</a></li>
-          <li><a href="#contact">{{ data['jump']['contact'] }}</a></li>
+          <li><a href="{{ data['main_url'] }}#apps">{{ data['jump']['apps'] }}</a></li>
+          <li><a href="{{ data['main_url'] }}#contact">{{ data['jump']['contact'] }}</a></li>
         </ul>
       </nav>
   

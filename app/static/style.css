@@ -1,7 +1,3 @@
-html, body {
-  /* height: 100%; */
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -36,7 +32,7 @@ img, i {
 
 @keyframes load-img {
   from {
-    opacity: 0;
+    opacity: 0.3;
   }
 
   to {
@@ -76,7 +72,7 @@ header a {
   margin-right: 0px;
 }
 
-.hero a, .project a, .contact button {
+.hero a, .project a, .contact button, .detail-header a {
   cursor: pointer;
   font-weight: bold;
   border-radius: 3px;
@@ -99,7 +95,7 @@ header a {
   height: 30px;
 }
 
-.hero a:hover, .project a:hover, .contact button:hover {
+.hero a:hover, .project a:hover, .contact button:hover, .detail-header a:hover {
   background-color: #082130;
 }
 
@@ -170,7 +166,7 @@ header a {
   border-radius: 5px;
   background-color: #ffffff;
   box-sizing: border-box;
-  box-shadow: 0px 2px 5px #9d9d9d;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   text-align: center;
   color: #082130;
@@ -197,6 +193,86 @@ header a {
   width: 100%;
   object-fit: cover;
   height: 100%;
+}
+
+.project-detail {
+  display: grid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  grid-template-columns: 1fr 2fr;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin: 15px;
+}
+
+.project-slideshow {
+  width: 100%;
+  border-radius: 5px 0px 0px 5px;
+  border-right: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+
+.project-slideshow .project-image {
+  display: flex;
+  animation: slide 8s infinite ease-in-out;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.project-slideshow .project-image img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.project-detail .detail-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 8px 15px;
+}
+
+.project-detail .detail-content p {
+  font-size: 20px;
+  font-family: 'Farsan', cursive;
+}
+
+.project-detail .detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.project-detail .detail-header p {
+  font-size: 20px;
+  font-family: 'Farsan', cursive;
+}
+
+.detail-content .detail-technologies {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  margin-top: 25px;
+  gap: 8px;
+}
+
+.detail-content .technology {
+  padding: 7px 5px;
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 13px;
 }
 
 .contact {

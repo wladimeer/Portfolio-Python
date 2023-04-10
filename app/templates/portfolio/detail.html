@@ -5,5 +5,33 @@
 {% endblock %}
 
 {% block content %}
-  project detail
+  <div class="project-detail">
+    <div class="project-slideshow">
+      <div class="project-image">
+        {% if data['project'].images_length == 1 %}
+          <img src="{{ data['project'].images[0] }}" alt="Project Image" />
+          <img src="{{ data['project'].images[0] }}" alt="Project Image" />
+        {% else %}
+          {% for image in data['project'].images %}
+            <img src="{{ image }}" alt="Project Image" />
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="detail-content">
+      <div class="detail-header">
+        <p>{{ data['project'].title }}</p>
+        <a href="{{ url_for('portfolio.project') }}">{{ data['view']['back'] }}</a>
+      </div>
+
+      <p>{{ data['project'].description }}</p>
+
+      <div class="detail-technologies">
+        {% for tech in data['project'].technologies %}
+          <span class="technology">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

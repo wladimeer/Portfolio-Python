@@ -4,9 +4,12 @@
       <label for="address">{{ data['form']['labels']['address'] }}</label>
 
       {% if field and field['address'] %}
-        <input name="address" id="address" value="{{ field['address'] }}" />
+        <input
+          name="address" id="address" value="{{ field['address'] }}"
+          placeholder="{{ data['form']['placeholder']['address'] }}"
+        />
       {% else %}
-        <input name="address" id="address" />
+        <input name="address" id="address" placeholder="{{ data['form']['placeholder']['address'] }}" />
       {% endif %}
 
       {% if error and error['address'] %}
@@ -18,9 +21,12 @@
       <label for="subject">{{ data['form']['labels']['subject'] }}</label>
 
       {% if field and field['subject'] %}
-        <input name="subject" id="subject" value="{{ field['subject'] }}" />
+        <input
+          name="subject" id="subject" value="{{ field['subject'] }}"
+          placeholder="{{ data['form']['placeholder']['subject'] }}"
+        />
       {% else %}
-        <input name="subject" id="subject" />
+        <input name="subject" id="subject" placeholder="{{ data['form']['placeholder']['subject'] }}" />
       {% endif %}
 
       {% if error and error['subject'] %}
@@ -32,9 +38,17 @@
       <label for="content">{{ data['form']['labels']['content'] }}</label>
 
       {% if field and field['content'] %}
-        <textarea name="content" id="content">{{ field['content'] }}</textarea>
+        <textarea
+          name="content" id="content"
+          placeholder="{{ data['form']['placeholder']['content'] }}"
+        >
+          {{ field['content'] }}  
+        </textarea>
       {% else %}
-        <textarea name="content" id="content"></textarea>
+        <textarea
+          name="content" id="content"
+          placeholder="{{ data['form']['placeholder']['content'] }}"
+        ></textarea>
       {% endif %}
 
       {% if error and error['content'] %}
