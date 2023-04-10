@@ -50,7 +50,8 @@ route_info = {
     'spoiler': "¿Aún no estás convencido? Mira lo que he construido",
     'view': {
       'project': "Ver Proyectos",
-      'repository': 'Ver Repositorio'
+      'repository': 'Ver Repositorio',
+      'back': 'Volver'
     },
     'form': {
       'labels': {
@@ -60,6 +61,11 @@ route_info = {
       },
       'buttons': {
         'send': "Enviar"
+      },
+      'placeholder': {
+        'address': "correo@correo.com",
+        'subject': "asunto del correo electrónico",
+        'content': "contenido del correo electrónico"
       }
     },
     'rule': "/en"
@@ -113,7 +119,8 @@ route_info = {
     'spoiler': "Still not convinced? Look at what I've built.",
     'view': {
       'project': "View Projects",
-      'repository': 'View Repository'
+      'repository': 'View Repository',
+      'back': 'Go back'
     },
     'form': {
       'labels': {
@@ -123,6 +130,11 @@ route_info = {
       },
       'buttons': {
         'send': "Send"
+      },
+      'placeholder': {
+        'address': "email@email.com",
+        'subject': "email's subject",
+        'content': "email's content"
       }
     },
     'rule': "/es"
